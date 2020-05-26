@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>js-ipfs example</title>
+    <script src="bundle.js"></script>
+    <style>
+      .content {
+        border: 1px solid black;
+        padding: 10px;
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Adding data to IPFS from the browser</h1>
+    <p> The <strong>open_config_node3</strong> node is running with an insecure COS configuration. </p>
+    <p> This allows content to be saved into the IPFS node without any direct interaction</p>
+    <p> This page looks like an innocent HTML page, but by loading this page, 
+        content has been added to the <strong>open_config_node3</strong>'s node.</p>
+    <p> This is possible even if the page is not loaded by <strong>open_config_node3</strong>'s gateway</p>
+    <br/>
+
+    <p>To confirm this, on any node run <strong>ipfs dht findprovs QmSv6nkqA5ghKeQNoVxUZgnVhaRbirPDZgF5Qyf2RvMDtV</strong>
+        This will show the peer id of <strong>open_config_node3</strong>
+    </p>
+    <p><strong>ipfs cat QmSv6nkqA5ghKeQNoVxUZgnVhaRbirPDZgF5Qyf2RvMDtV</strong> can also be executed to see the content of the file</p> 
+    <p>To repeat the confirmation remember to run <strong>docker-compose down -v</strong> to clear contents in the nodes</p> 
+</body>
+</html>
